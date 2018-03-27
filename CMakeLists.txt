@@ -26,8 +26,11 @@ if (USE_MYMATH)
   set (EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
 endif (USE_MYMATH)
  
+ 
+set(WIN_RESOURCE_FILE ico.rc)
+
 # add the executable
-add_executable (cross-compile main.cpp)
+add_executable (cross-compile main.cpp ${WIN_RESOURCE_FILE})
 target_link_libraries (cross-compile ${EXTRA_LIBS})
 
 
