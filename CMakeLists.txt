@@ -31,4 +31,17 @@ add_executable (cross-compile main.cpp)
 target_link_libraries (cross-compile ${EXTRA_LIBS})
 
 
+# add the install targets
+set(CMAKE_INSTALL_PREFIX "${PROJECT_BINARY_DIR}/install/")
+install (TARGETS cross-compile DESTINATION bin)
+install (FILES "${PROJECT_BINARY_DIR}/CrossConfig.h"        
+  DESTINATION include)
+
+# build a CPack driven installer package
+include (InstallRequiredSystemLibraries)
+set (CPACK_RESOURCE_FILE_LICENSE  
+     "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+set (CPACK_PACKAGE_VERSION_MAJOR "${CROSS_VERSION_MAJOR}")
+set (CPACK_PACKAGE_VERSION_MINOR "${CROSS_VERSION_MINOR}")
+include (CPack)
 
