@@ -1,0 +1,4 @@
+// the configured options and settings for Cross-compile
+#define CROSS_VERSION_MAJOR @CROSS_VERSION_MAJOR@
+#define CROSS_VERSION_MINOR @CROSS_VERSION_MINOR@
+#cmakedefine USE_MYMATH

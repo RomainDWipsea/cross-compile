@@ -1,0 +1,1 @@
+This is the license for version 1.0 of the cross-compile project.
